@@ -9,13 +9,13 @@ import objects.InveneWelcomePage;
 public class DemoTest extends BaseTest{
 
 	@Test
-	public void TC1() throws Exception {
+	public void TC1() throws Exception  {
 		startTest("https://invene.com/");
-		assertTextPresentInElement("//h2[contains(text(),'Healthcare Product Development')]", "xpath", "Healthcare Product Development");
-		takescreenshot();
 		InveneWelcomePage inv = new InveneWelcomePage(driver);
-		Assert.assertEquals(inv.wrapperText(), "Healthcare Software That Empowers Your Users");
-		inv.homeClick();
+		inv.checkTextisPresent("Healthcare Product Development");
+		takescreenshot();
+		Assert.assertEquals(inv.welcomeText(), "Healthcare Software That Empowers Your Users");
+		inv.clickServices("Services");
 		takescreenshot();
 	}
 	

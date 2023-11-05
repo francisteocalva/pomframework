@@ -71,11 +71,12 @@ public class BaseTest {
 	}
 
 	public void takescreenshot() throws IOException {
+		String path = System.getProperty("user.dir").replace("\\", "/") + "/test-output/screenshots/";
 		try {
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 //			FileUtils.copyFile(scrFile, new File("C:\\Workspace\\SeleniumProject\\test-reports\\screenshots\\"
 //					+ getFileName(this.getClass().getSimpleName())));
-			FileUtils.copyFile(scrFile, new File("D:\\" + getFileName(this.getClass().getSimpleName())));
+			FileUtils.copyFile(scrFile, new File(path + getFileName(this.getClass().getSimpleName())));
 
 		} catch (Exception e) {
 			log("Screenshot is not created.");
@@ -90,28 +91,26 @@ public class BaseTest {
 	}
 
 	public void assertTextPresentInElement(String locator, String locType, String valueToCheck) throws Exception {
-
-		// String valueToCheck = getCellData(TestCaseRow, colNum);
 		System.out.println(valueToCheck);
 		// driver.manage().timeouts().implicitlyWait(D);
 		try {
 
 			if (locType.equalsIgnoreCase("id")) {
 				Assert.assertTrue(driver.findElement(By.id(locator)).getText().equals(valueToCheck));
-				System.out.println(driver.findElement(By.id(locator)).getText());
+				//System.out.println(driver.findElement(By.xpath(locator)).getText());
 				log("The text " + valueToCheck + " is present in the web element.");
 
 			} else if (locType.equalsIgnoreCase("name")) {
 				Assert.assertTrue(driver.findElement(By.name(locator)).getText().equals(valueToCheck));
-				System.out.println(driver.findElement(By.name(locator)).getText());
+				
 				log("The text " + valueToCheck + " is present in the web element.");
 			} else if (locType.equalsIgnoreCase("class")) {
 				Assert.assertTrue(driver.findElement(By.className(locator)).getText().equals(valueToCheck));
-				System.out.println(driver.findElement(By.className(locator)).getText());
+				
 				log("The text " + valueToCheck + " is present in the web element.");
 			} else {
 				Assert.assertTrue(driver.findElement(By.xpath(locator)).getText().equals(valueToCheck));
-				System.out.println(driver.findElement(By.xpath(locator)).getText());
+				
 				log("The text " + valueToCheck + " is present in the web element.");
 
 			}
@@ -120,9 +119,10 @@ public class BaseTest {
 			log("Text is not present in the web element.");
 			e.printStackTrace();
 			Assert.fail();
-			// driver.quit();
 
 		}
 
 	}
+	
+	
 }

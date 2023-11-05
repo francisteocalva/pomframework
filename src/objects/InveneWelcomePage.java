@@ -13,18 +13,28 @@ public class InveneWelcomePage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void homeClick() {
-		click("Services", "linktext");
+	
+	String textContainer = "//h2[contains(text(),'Healthcare Product Development')]";
+	By welcomeTextContaner = By.xpath("//h1[@style='text-align:center;white-space:pre-wrap;']");
+	
+	//check if the description "Healthcare Product Development" present in the weblement
+	public void checkTextisPresent(String verifyText) throws Exception {
+		assertTextPresentInElement(textContainer, "xpath", verifyText);
+	}
+	
+	//click text link
+	public void clickServices(String linkText) {
+		click(linkText, "linktext");
 		BaseTest.log("Hyperlink clicked");
 	}
-
-	public String wrapperText() {
+	
+	//verify main welcomeText
+	public String welcomeText() {
 		String retVal = null;
-		int sizeElement = driver.findElements(By.xpath("//h1[@style='text-align:center;white-space:pre-wrap;']"))
+		int sizeElement = driver.findElements(welcomeTextContaner)
 				.size();
-
 		for (int i = 0; sizeElement > i; i++) {
-			retVal = driver.findElements(By.xpath("//h1[@style='text-align:center;white-space:pre-wrap;']")).get(i)
+			retVal = driver.findElements(welcomeTextContaner).get(i)
 					.getText();
 			if (retVal.contentEquals("Healthcare Software That Empowers Your Users")) {
 				break;
@@ -32,7 +42,6 @@ public class InveneWelcomePage extends BasePage {
 			}
 		}
 		return retVal;
-
 	}
 
 }

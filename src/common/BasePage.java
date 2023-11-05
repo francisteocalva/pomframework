@@ -10,18 +10,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public abstract class BasePage {
+public abstract class BasePage extends BaseTest{
 
-	/** Timeout for finding page element in seconds */
-	// protected static final long FIND_ELEMENT_TIMEOUT = 30L;
+
 
 	protected static final long waitTime = 30;
 
-	/** The Selenium2 web driver. */
-	protected WebDriver driver;
+	
+	//protected WebDriver driver;
 
 	public BasePage(WebDriver driver) {
-		this.driver = driver;
+		BaseTest.driver = driver;
 	}
 
 	public WebElement findElement(String elementId, String locType) {
@@ -64,7 +63,6 @@ public abstract class BasePage {
 	}
 
 	public void click(String locator, String locType) {
-
 		WebElement element = findElement(locator, locType);
 		element.click();
 

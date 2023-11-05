@@ -32,12 +32,12 @@
       <![CDATA[]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-11-04T22:47:31 PST" name="Suite" finished-at="2023-11-04T22:47:40 PST" duration-ms="8763">
+  <suite started-at="2023-11-05T17:01:48 PST" name="Suite" finished-at="2023-11-05T17:01:58 PST" duration-ms="10118">
     <groups>
     </groups>
-    <test started-at="2023-11-04T22:47:31 PST" name="Test" finished-at="2023-11-04T22:47:40 PST" duration-ms="8763">
+    <test started-at="2023-11-05T17:01:48 PST" name="Test" finished-at="2023-11-05T17:01:58 PST" duration-ms="10118">
       <class name="test.DemoTest">
-        <test-method signature="TC1()[pri:0, instance:test.DemoTest@27462a88]" started-at="2023-11-04T22:47:31 PST" name="TC1" finished-at="2023-11-04T22:47:40 PST" duration-ms="8646" status="PASS">
+        <test-method signature="TC1()[pri:0, instance:test.DemoTest@27462a88]" started-at="2023-11-05T17:01:48 PST" name="TC1" finished-at="2023-11-05T17:01:58 PST" duration-ms="9931" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[]]>
@@ -62,7 +62,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- TC1 -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:test.DemoTest@27462a88]" started-at="2023-11-04T22:47:40 PST" name="endTest" finished-at="2023-11-04T22:47:40 PST" duration-ms="83" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:test.DemoTest@27462a88]" started-at="2023-11-05T17:01:58 PST" name="endTest" finished-at="2023-11-05T17:01:58 PST" duration-ms="135" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[]]>
